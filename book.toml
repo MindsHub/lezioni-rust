@@ -1,0 +1,6 @@
+[book]
+authors = ["AlessioZeni"]
+language = "en"
+multilingual = false
+src = "src"
+title = "lezioni-rust"
