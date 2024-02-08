@@ -69,7 +69,7 @@ Ad esempio `cargo add rand` aggiunge "rand" al nostro progetto. Le dipendenze so
 Con la vostra esperienza con rust, potrebbe sembrare che il compilatore sia piuttosto capriccioso e pedantico (e in alcuni casi lo è), ma cercate di vederlo come un alleato.
 Infatti quasi sempre nel messaggio di errore vi dirà quale è il codice dell'errore, una rapida descrizione, delle indicazioni di solito dettagliate su cosa stia succedendo e a volte un indizio su come risolvere il problema (e come approfondire l'argomento).
 Se del codice in safe rust compila, strutturalmente abbiamo la certezza che non ci saranno crash imprevisti (niente stack overflow o simili)
-Un consiglio che posso dirvi è di vederla in questo modo: "sto impiegando più tempo a scrivere il codice perché rust mi obbliga a riflettere alle varie eccezzioni che possono triggerarsi, ma una volta compilato ho la certezza matematica che questi problemi non accadranno mai (e quindi codice più facilmente mantenibile)"
+Un consiglio che posso dirvi è di vederla in questo modo: "sto impiegando più tempo a scrivere il codice perché rust mi obbliga a riflettere alle varie eccezioni che possono triggerarsi, ma una volta compilato ho la certezza matematica che questi problemi non accadranno mai (e quindi codice più facilmente mantenibile)"
 
 # Commenti
 Ovviamente come in tutti i linguaggi è possibile scrivere commenti, ma in rust non tutti i commenti sono uguali...

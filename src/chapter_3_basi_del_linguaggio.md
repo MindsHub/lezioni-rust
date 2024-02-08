@@ -29,7 +29,7 @@ se volete sperimentare con altri tipi, quelli base sono:
 # If/Else
 Ogni linguaggio ha un modo per definire se questa condizione è valida esegui questo codice. In rust esiste l'if:
 ```rust
-// NB le parentesi grafe sono obbligatorie, mentre le parentesi tonde intorno alla condizione sono sconsigliate
+// NB le parentesi graffe sono obbligatorie, mentre le parentesi tonde intorno alla condizione sono sconsigliate
 if condizione{
     //se la condizione è vera
     //codice
@@ -61,7 +61,7 @@ for i in range{
 loop{
     //ripeti questo codice all'infinito
 }
-//all'interno di ogniuno di questi cicli è possibile usare
+//all'interno di ognuno di questi cicli è possibile usare
 break; //esci dal ciclo subito
 continue; //salta alla prossima iterazione del ciclo
 ```

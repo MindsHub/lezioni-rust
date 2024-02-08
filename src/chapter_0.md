@@ -1,12 +1,12 @@
-# Perchè rust?
+# Perché rust?
 Ma chi ce lo fa fare? Cosa ha di così comodo? Perché c'è tutto questo hype?
 Ecco una lista dei punti a favore di rust:
 ### Typed
 Si, i tipi sono fantastici, almeno sai cosa contiene quella variabile senza che il programma lo scopra a runtime crashando miseramente. (guardo voi js e python)
 ### Compilato
-Ci mette qualche secondo a compilare il codice, ma dopo puoi eseguirlo ovunque anche senza runtime (coff coff Java e python), con performance simili a C/C++ (hanno ottimizzazioni simili, a volte rust è più veloce, a volte C è più veloce). Inoltre può essere eseguito su qualsiasi cosa possa eseguire istruzioni (vedi arduini e simili) senza doversi reinventare un compilatore (come invece ha fatto micropython).
+Ci mette qualche secondo a compilare il codice, ma dopo puoi eseguirlo ovunque anche senza runtime (coff coff Java e python), con performance simili a C/C++ (hanno ottimizzazioni simili, a volte rust è più veloce, a volte C è più veloce). Inoltre può essere eseguito su qualsiasi cosa possa eseguire istruzioni (vedi arduino e simili) senza doversi reinventare un compilatore (come invece ha fatto micropython).
 ### Compilatore rompi... scatole
-A volte può essere pedante, ma esegue molti controlli, e quando compila abbiamo la certezza che non crashi per stupidi errori ( vedi typesafe). Potete vederlo come più tempo speso nel progettare buon codice che può portare a minor sforzo nel mantere il codice.
+A volte può essere pedante, ma esegue molti controlli, e quando compila abbiamo la certezza che non crashi per stupidi errori ( vedi typesafe). Potete vederlo come più tempo speso nel progettare buon codice che può portare a minor sforzo nel mantenere il codice.
 ### Type safe
 I linguaggi non type safe rischiano di avere puntatori che non puntano a niente, vulnerabilità nel codice pronte a creare problemi in seguito. Un programma scritto solo in safe rust ha la garanzia di non avere questi problemi. Ovviamente è possibile generare codice typesafe anche da linguaggi non typesafe, ma il programmatore deve sapere cosa sta facendo (e la storia ci insegna che spesso non è così).
 ### Moderno
