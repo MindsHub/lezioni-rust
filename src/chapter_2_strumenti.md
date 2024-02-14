@@ -80,7 +80,9 @@ Per i più temerari lascio questo [link](https://doc.rust-lang.org/reference/com
     commento multilinea
 */
 /// commento per la documentazione su una linea, deve essere immediatamente sopra a una funzione/ struttura
+# struct Hidden;
 /**
     commento per la documentazione multilinea, anche lui deve essere immediatamente sopra a una funzione/ struttura
 */
+# struct Hidden2;
 ```

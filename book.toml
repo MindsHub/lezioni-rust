@@ -1,6 +1,9 @@
 [book]
 authors = ["AlessioZeni"]
-language = "en"
+language = "it"
 multilingual = false
 src = "src"
 title = "lezioni-rust"
+
+[build]
+create-missing = false

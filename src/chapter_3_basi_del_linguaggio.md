@@ -3,7 +3,7 @@
 Non possiamo iniziare a programmare senza sapere come dichiarare e inizializzare le variabili!
 Rust è un typed language (grazie a dio), e pertanto deve sempre sapere in ogni momento di che tipo è una variabile, e a meno che non gli diciamo altrimenti il tipo non cambia mai.
 Per dichiarare una variabile basta scrivere
-```rust 
+```rust,ignore
 let <nome_variabile>: <tipo> = <valore>;
 ```
 Dove per un semplice intero possiamo scrivere i32 (intero a 32 bit), e assegnare un intero:
@@ -22,13 +22,13 @@ se volete sperimentare con altri tipi, quelli base sono:
 - String: stringhe più belle, ne parliamo più avanti
 
 ### Esercizi
-- Provate a dichiarare una variabile e a visualizzarla nel println! (consiglio, cercate la documentazione online su come println funziona )
+- Provate a dichiarare una variabile e a visualizzarla nel println! (consiglio, cercate la documentazione online su come println! funziona )
 - Provate a fare un po' di aritmetica: sommare/dividere interi, e a visualizzare il risultato
 - provate a sommare 2 stringhe (questo è un po' più difficile)
 
 # If/Else
 Ogni linguaggio ha un modo per definire se questa condizione è valida esegui questo codice. In rust esiste l'if:
-```rust
+```rust,ignore
 // NB le parentesi graffe sono obbligatorie, mentre le parentesi tonde intorno alla condizione sono sconsigliate
 if condizione{
     //se la condizione è vera
@@ -44,7 +44,7 @@ if condizione{
 
 # Cicli
 E se volessimo ripetere del codice?
-```rust
+```rust,ignore
 while condizione{
     //ripeti codice fino a quando la condizione è vera
     //codice
@@ -72,7 +72,7 @@ continue; //salta alla prossima iterazione del ciclo
 # Funzioni
 Per chi non conoscesse il concetto delle funzioni, possiamo vederlo come un "insieme di comandi", che prende in input dei parametri e a volte da in output un valore.
 In rust la sintassi è:
-```rust
+```rust,ignore
 
 ///questa funzione non da in output niente
 fn nome_funzione(parametri){
