@@ -39,5 +39,5 @@ Inoltre ci sono varie tecniche avanzate (re-exports e simili) per specificare be
 Le regole sulla visibilità valgono per moduli, strutture, funzioni, trait...
 
 ### Esercizi
-- creare delle funzioni pubbliche, e vederle da un altro modulo.
-- 
+- provare a modificare le variabili senza riassegnarle
+- definire una funzione pubblica
