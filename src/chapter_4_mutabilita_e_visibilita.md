@@ -2,10 +2,11 @@
 Vi è mai capitato di non voler prestare un gioco della playstation a un amico?
 E se me lo rompe? E se non me lo restituisse? E se volessi tenere il mio tessssoro solo per me?
 Ovviamente rust aiuta con questi problemi (digitalmente parlando), con due strumenti fondamentali.
+
 ## Mutabilità
 Una variabile deve essere modificabile? Allora la dichiaro come modificabile, altrimenti una volta inizializzata è in sola lettura (default). La decisione di cosa deve essere modificabile deve essere fatta oculatamente per evitare il rischio di fare danni.
-Un esempio: se passo dei soldi a una funzione (immaginate esista il tipo soldi), lascio l'utente della funzione modificarli a piacere? Ovviamente se è un proprietario della banca può vedere ma non toccare niente, e invece l'utente può solo aumentare o calare i soldi attraverso delle funzioni ben definite (se ad esempio fa un versamento).
-Da una variabile non mutabile è impossibile creare una variabile mutabile (salvo in alcuni casi ricreare una nuova variabile).
+Un esempio: se passo dei soldi a una funzione (immaginate esista il tipo soldi), lascio l'utente della funzione modificarli a piacere? Ovviamente se è un proprietario della banca può vedere ma non toccare niente, e invece l'utente può solo aumentare o calare i soldi attraverso delle funzioni ben definite (ad esempio con un versamento).
+Da una variabile non mutabile è impossibile creare una variabile mutabile (salvo in alcuni casi attraverso una definizione di una nuova variabile, o strutture particolari).
 
 La mutabilità è riferita alle variabili.
 
@@ -27,7 +28,7 @@ A volte però ci interessa rendere delle funzioni visibili ma non troppo. Un mod
 mod modulo{
     pub (crate) fn test(){}
     pub (self) fn test1(){}
-    pub(super) fn test2(){}
+    pub (super) fn test2(){}
     // pub(in crate::modulo) fn test3(){}
     // nel playground non compila, ma anche i path si possono usare
 }
@@ -36,3 +37,7 @@ mod modulo{
 Inoltre ci sono varie tecniche avanzate (re-exports e simili) per specificare bene come deve essere visibile. Le vedremo al bisogno
 
 Le regole sulla visibilità valgono per moduli, strutture, funzioni, trait...
+
+### Esercizi
+- creare delle funzioni pubbliche, e vederle da un altro modulo.
+- 
