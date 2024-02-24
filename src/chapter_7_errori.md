@@ -97,7 +97,7 @@ Il costrutto `if let` serve per controllare il contenuto e gestire il caso di su
 #    // la conversione ha avuto successo
 #    return Ok(numero_convertito)
 #}
-
+#
 // qui il numero viene convertito correttamente
 if let Ok(numero_convertito) = leggi_numero_da_casella_di_testo("1234") {
     println!("Bravo, hai inserito il numero {numero_convertito}");
@@ -140,7 +140,7 @@ Il costrutto `match` è più potente di `if let` ed è in particolare utile quan
 #    // la conversione ha avuto successo
 #    return Ok(numero_convertito)
 #}
-
+#
 // scrive "Errore: Il carattere non e' una cifra: 'a'"
 match leggi_numero_da_casella_di_testo("abc") {
     Ok(numero_convertito) => println!("Bravo, hai inserito il numero {numero_convertito}"),
