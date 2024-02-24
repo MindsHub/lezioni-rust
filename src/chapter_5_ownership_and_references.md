@@ -28,11 +28,11 @@ E invece, come faccio a "prestare" un oggetto in modo che la proprietà rimanga 
 
 l'esempio sopra riscritto diventa così:
 ```rust
-
 fn test(x: &i32){
     // non ho l'ownership, ed inoltre non posso modificarlo
     print!("{}", x);
 }
+
 let mut x=3;
 // proprietà di x
 test(&x);
