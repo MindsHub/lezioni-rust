@@ -7,7 +7,7 @@
 - [Mutabilità e visibilità](./chapter_4_mutabilita_e_visibilita.md)
 - [Ownership e Reference](./chapter_5_ownership_and_references.md)
 - [Gestione degli errori](./chapter_7_errori.md)
-
+- [Struct e enum](./chapter_8_struct_enum_trait.md)
 # Tornei
 - [Torneo](./torneo_1.md)
 
