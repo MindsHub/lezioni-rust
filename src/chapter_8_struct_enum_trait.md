@@ -6,10 +6,10 @@ nome, cognome, ambito di preferenze (elettronica, informatica, stampa 3d...) e t
 Se cercassimo di tenere tutti questi dati in variabili separate in un attimo il codice diventerebbe illeggibile, ad esempio:
 ```rust
 fn main(){
-    let nome_persona_1 ="Alessio";
-    let nome_persona_2 ="Fabio";
+    let nome_persona_1 = "Alessio";
+    let nome_persona_2 = "Fabio";
     let cognome_persona_1 = "Zeni";
-    let cognome_persona_2="Giovanazzi";
+    let cognome_persona_2 = "Giovanazzi";
     let preferenze_persona_1 = "Informatica, Stampa 3d";
     let preferenze_persona_2 = "Informatica, Elettronica";
     //... e tanta altra roba
@@ -37,7 +37,7 @@ fn main(){
     };
     //per accedere ai campi basta usare la sintassi <variabile>.<campo>
     println!("Io sono {} {}", persona_1.nome, persona_1.cognome);
-     println!("Io sono {} {}", persona_2.nome, persona_2.cognome);
+    println!("Io sono {} {}", persona_2.nome, persona_2.cognome);
 }
 ```
 Direi che è molto più ordinato il codice, e abbiamo appena iniziato!!
@@ -72,8 +72,8 @@ impl MembroMindshub{
 fn main(){
     // inizializzazione con la funzione associata new (per indicarla ci vogliono i ::)
     let persona_1 = MembroMindshub::new("Alessio", "Zeni", "Informatica, Stampa 3d");
-
     let persona_2 = MembroMindshub::new("Fabio", "Giovanazzi", "Informatica, Elettronica");
+
     // facciamo salutare queste strutture, per farlo chiamiamo il metodo saluta (con il . )
     persona_1.saluta();
     persona_2.saluta();
@@ -84,37 +84,42 @@ Anche l'esperienza di chi utilizzerà la nostra libreria è mooolto migliore.
 
 # Traits
 
-Esiste un modo per definire dei comportamenti condivisi? Ad esempio, ogni animale deve fare il proprio verso.
+Talvolta serve poter definire dei comportamenti condivisi per struct diverse. Ad esempio, ogni animale può fare il proprio verso:
 ```rust
-trait Animali{
-    /// funzione che descrive come dovrebbe comportarsi degli animali generici
+trait Animale{
+    /// Un qualsiasi oggetto che implementa `Animale` dovrà essere in grado
+    /// di fare un verso, ovvero, dovrà implementare questa funzione
     fn fai_verso(&self);
 }
-struct Pig{};
-impl Animali for Pig{
+
+struct Maiale {};
+impl Animale for Maiale {
     fn fai_verso(&self){
         println!("Oink Oink");
     }
-
 }
-struct Cow{};
-impl Animali for Cow{
+
+struct Mucca {};
+impl Animale for Mucca {
     fn fai_verso(&self){
         println!("Mouuu");
     }
 }
-struct Crocodile{};
-impl Animali for Crocodile{
+
+struct Coccodrillo {};
+impl Animale for Coccodrillo {
     fn fai_verso(&self){
-        println!("");
+        // Il coccodrillo come fa?
     }
 }
 ```
-In questo caso sappiate che posso descrivere dei comportamenti condivisi e implementarlo per diverse strutture. Questo è particolarmente utile in casi tipo:
-- Non mi interessa quale sia la comunicazione tra i vari dispositivi, basta che mi lasci comunicare con questa interfaccia.
-- Non so bene che struttura ho salvato qui in memoria, ma per esempio è disegnabile sullo schermo.
-- Voglio che queste funzioni siano disponibili per qualunque struttura che implementa questo trait
-Purtroppo descrivere questi comportamenti si può fare solo con una sintassi abbastanza pesante, la quale esula da questo corso introduttivo. Comunque sappiate che con Cyberorto avremo taaaante interfacce, e implementarle e descriverle sarà necessario.
+
+Usando i `trait` quindi si possono descrivere dei comportamenti condivisi, e poi fare in modo che varie `struct` li implementino e espongano appunto questi comportamenti condivisi. Questo è particolarmente utile in casi tipo:
+- Voglio poter interagire con dispositivi di un certo genere indipendentemente dalla loro marca, e quindi creo un'interfaccia standard che mi permetta di interagire con i dispositivi in modo generico, *astraendo* i dettagli implementativi. Ad esempio, per un sensore di temperatura si creerebbe un `trait` con una funzione `leggi_temperatura`, e poi una `struct` diversa per ogni possibile sensore di temperatura che si usa.
+- Voglio poter stampare i contenuti di una particolare `struct` per vederne il contenuto e aiutarmi a debuggare il programma. Per questo la libreria standard di Rust contiene il `trait Display` che viene implementato da varie `struct` della libreria standard, e che grazie a questa interfaccia comune possiamo stampare con `println!("{:?}", qualsiasi_cosa_che_implementi_display)`.
+- Ho un videogioco con varie entità presenti nel mondo (ad es. animali, appunto), e voglio che il giocatore possa interagire con ogni entità in un modo comune (ad es. facendogli fare il verso).
+
+La descrizione dei `trait` fatta in questa pagina è piuttosto introduttiva, e ci sono varie sintassi che non abbiamo trattato per implementare i casi qui sopra. Comunque sappiate che con Cyberorto avremo taaaante interfacce, e implementarle e descriverle sarà necessario, per cui imparerete facendo.
 
 # Enums
 Cosa succede se ho dei dati opzionali? Ad esempio un Mindshubber può essere interessato solo a un determinato set di interessi. Oppure se voglio enunciare dei colori:
