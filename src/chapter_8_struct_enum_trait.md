@@ -117,12 +117,64 @@ In questo caso sappiate che posso descrivere dei comportamenti condivisi e imple
 Purtroppo descrivere questi comportamenti si può fare solo con una sintassi abbastanza pesante, la quale esula da questo corso introduttivo. Comunque sappiate che con Cyberorto avremo taaaante interfacce, e implementarle e descriverle sarà necessario.
 
 # Enums
-Cosa succede se ho dei dati opzionali? Ad esempio un Mindshubber può essere interessato solo a un determinato set di interessi. Oppure se voglio enunciare dei colori:
+Cosa succede se ho dei dati alternativi? Ad esempio un Mindshubber può essere interessato solo a un determinato set di interessi.
+Oppure se voglio enunciare dei colori?
 ```rust
+// i colori possono assumere SOLO questi valori qui
 enum Colori{
     Rosso,
     Verde,
     Blu
 }
+// si possono anche implementare i trait sugli enum:
+impl Clone for Colori{
+    fn clone(&self) -> Self{
+        match self{
+            &Colori::Rosso => Colori::Rosso,
+            &Colori::Verde => Colori::Verde,
+            &Colori::Blu => Colori::Blu,
+        }
+    }
 
+}
+fn main(){
+    let t = Colori::Rosso;
+    // in questo caso possiamo usare le stesse cose che usiamo per i result (che sono esattamente enum...)
+    if let Colori::Rosso = t{
+        println!("ROSSO");
+    }else{
+        println!("NON ROSSO");
+    }
+    match t{
+        Colori::Rosso => {println!("ROSSO") },
+        Colori::Verde => {println!("VERDE") },
+        Colori::Blu => {println!("BLU") },
+    }
+}
+
+```
+
+# Derive magic
+In alcuni casi possiamo implementare automaticamente un trait per una struttura/enum (FIGATAAAA).
+Praticamente sono delle macro scritte da qualcun'altro, che prendono in input codice rust per generarne dell'altro.
+
+Ad esempio, se volessimo derivare Clone senza doverlo scrivere a mano possiamo fare così:
+```rust
+#[derive(Clone, Default, Debug)]
+enum Colori{
+    #[default]
+    Rosso,
+    Verde,
+    Blu
+}
+#[derive(Clone, Default, Debug)]
+struct Clonami{
+    ciao: String,
+    sto_finendo_i_nomi_per_le_variabili: Colori,
+}
+fn main(){
+    let t = Clonami::default();
+    let c = t.clone();
+    println!("{:?}", c);
+}
 ```
