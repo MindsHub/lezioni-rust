@@ -34,6 +34,7 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           # Optional Plugins have to be enabled
           use-mermaid: true
+      - run: mdbook-mermaid install .
       - run: mdbook build
 
       - name: Upload artifact
