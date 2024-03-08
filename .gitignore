@@ -2,3 +2,4 @@ book
 lezione-1
 .vscode/**/*
 torneo-1/**
+*.js
