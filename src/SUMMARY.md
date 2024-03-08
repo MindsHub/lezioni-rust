@@ -13,4 +13,7 @@
 
 # Altro
 - [Git](./chapter_6_git.md)
-- [Cyberorto](./cyberorto.md)
+
+# Cyberorto
+- [Backend](./cyberorto_backend.md)
+- [Frontend](./cyberorto_frontend.md)
