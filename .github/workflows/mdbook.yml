@@ -28,13 +28,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
+      - uses: actions/checkout@v4
+      - uses: jontze/action-mdbook@v3
         with:
-          mdbook-version: 'latest'
-
+          token: ${{secrets.GITHUB_TOKEN}}
+          # Optional Plugins have to be enabled
+          use-mermaid: true
       - run: mdbook build
 
       - name: Upload artifact
