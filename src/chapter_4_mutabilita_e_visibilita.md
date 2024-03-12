@@ -12,6 +12,7 @@ La mutabilità è riferita alle variabili.
 
 ## Visibilità
 La funzione "aggiungi soldi al conto corrente" non deve essere chiamabile da chiunque, ma solo da alcuni specifici macchinari della banca (ad esempio i bancomat). Ecco che rust ci da uno strumento per decidere cosa e quando devono essere visibili le funzioni.
+Di default le funzioni sono private, e quindi visibili solo nel modulo corrente.
 Ad esempio per generare una funzione pubblica è necessario aggiungere pub davanti alla dichiarazione:
 ```rust
 pub fn sono_in_tv_mamma(mut io_sono_modificabile: i32, io_sono_immutabile: i32){
@@ -26,6 +27,7 @@ sono_in_tv_mamma(4, 7);
 A volte però ci interessa rendere delle funzioni visibili ma non troppo. Un modo per farlo è specificare dove deve essere visibile:
 ```rust
 mod modulo{
+    fn test0(){} // privata
     pub (crate) fn test(){}
     pub (self) fn test1(){}
     pub (super) fn test2(){}
